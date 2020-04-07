@@ -3,7 +3,9 @@ import './App.css';
 import './assets/main.css';
 import HomePage from './pages/homepage.page';
 import ShopPage from './pages/shop.page'
-import {Route} from 'react-router-dom';
+import {Route,Switch} from 'react-router-dom';
+import Header from './components/header.component'
+
 
 
 class App extends React.Component {
@@ -11,8 +13,11 @@ class App extends React.Component {
   render(){
     return (
       <>
-      <Route exact path='/' component={HomePage} />
-      <Route exact path='/shop' component={ShopPage} />
+        <Header/>
+        <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route exact path='/shop' component={ShopPage} />
+        </Switch>
       </>
     );
   };
