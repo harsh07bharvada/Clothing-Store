@@ -22,15 +22,9 @@ class App extends React.Component {
       
       if(user)
       {
-        console.log(`ComponentDidMount called with user`);
-        console.log(user);
         const userRef = createUserProfileData(user);
-
         (await userRef).onSnapshot(snapshot=>{
 
-          console.log(`userRef :`);
-          console.log(snapshot);
-          console.log(snapshot.data());
           setCurrentUser({
             
               id:userRef.id,
@@ -53,8 +47,6 @@ class App extends React.Component {
 
 
     const {currentUser} = this.props;
-    console.log('Current User');
-    console.log(currentUser);
     return (
       <>
         <Header />
