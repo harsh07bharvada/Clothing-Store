@@ -1,11 +1,15 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import CartItem from './cart-item.component';
 
-const CartDropdown =()=>(
+const CartDropdown =({cartItems})=>(
 
-    <div className="absolute w-64 h-64 right-0 mt-40 mr-10 md:mr-32 bg-gray-100  rounded-md z-40 shadow-2xl">
-        <div className="flex flex-col w-full h-full justify-between items-center p-3">
-            Item1
-            Item2
+    <div className="absolute w-64 h-64 right-0 mt-40 mr-10 md:mr-32 bg-white border border-gray-300 rounded-md z-40 shadow-2xl">
+        <div className="flex flex-col w-full h-full justify-end items-center p-3">
+            <div className="flex flex-col h-48 w-full overflow-y-scroll">
+                {cartItems.map(item=>
+                    <CartItem key={item.id} {...item} />)}
+            </div>
             <div className="flex w-full h-12 rounded-md bg-indigo-700 text-xl text-white font-semibold justify-center items-center">
                 Checkout
             </div>
@@ -13,4 +17,7 @@ const CartDropdown =()=>(
     </div>
 )
 
-export default CartDropdown;
+const mapStateToProps = ({cart:{cartItems}})=>({
+    cartItems
+});
+export default connect(mapStateToProps)(CartDropdown);
