@@ -8,7 +8,8 @@ import Header from './components/header.component';
 import SignInSignUp from './pages/signin-signup-page';
 import {auth,createUserProfileData} from '../src/firebase/firebase.util'
 import {connect} from 'react-redux';
-import setCurrentUser from './redux/user/user.action'
+import setCurrentUser from './redux/user/user.action';
+import {currentUserSelector} from '../src/redux/user/user.selectors'
 
 
 class App extends React.Component {
@@ -61,7 +62,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = state =>({
-  currentUser:state.user.setCurrentUser
+  currentUser:currentUserSelector(state)
 })
 
 const mapDispatchToProps = dispatch =>({
