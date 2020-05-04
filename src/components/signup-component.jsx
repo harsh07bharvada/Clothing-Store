@@ -59,7 +59,7 @@ class SignUp extends React.Component{
                         </span>
                     </div>
                     <div className="flex flex-col flex-1 w-full ">
-                        <form className="flex flex-wrap h-full w-full" action="">
+                        <div className="flex flex-wrap h-full w-full">
                             <div className="flex flex-col w-full px-4 py-4 md:px-6 md:py-6 justify-center">
 
                                 <FormInput label="Display Name" handleChange={this.handleChange} name="displayName" value={this.state.displayName} type="text" />
@@ -85,7 +85,7 @@ class SignUp extends React.Component{
                                 <span onClick={this.handleSubmit} className="font-black text-xl text-white ">Sign Up</span>
     
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

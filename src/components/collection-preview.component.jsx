@@ -9,8 +9,8 @@ const CollectionPreview = ({title,items}) => {
             </div>
             <div className="flex flex-row w-full h-auto my-2 ">
                 {
-                    items.filter((item,index)=>index<4).map(({id,...otherItemProps})=>(
-                        <CollectionItem key={id} {...otherItemProps} />
+                    items.filter((item,index)=>index<4).map((item)=>(
+                        <CollectionItem key={item.id} item={item} />
                         
                     ))
                 }

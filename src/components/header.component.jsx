@@ -8,7 +8,7 @@ import CartDropwdown from './cart-dropdown.component';
 
 
 
-const Header = ({user,hidden})=>(
+const Header = ({currentUser,hidden})=>(
     <>
     <div className="flex inline-block flex-row h-20 w-full text-xs md: text-lg">
         <div className="flex justify-start items-center h-full w-1/6">
@@ -33,7 +33,7 @@ const Header = ({user,hidden})=>(
         <div className="flex w-1/6 h-full items-center justify-end  cursor-pointer">
             {
                 
-                user? 
+                currentUser? 
                 (
                     <div onClick={()=>auth.signOut()}>
                         SIGN OUT
@@ -48,8 +48,8 @@ const Header = ({user,hidden})=>(
         <div className="flex w-1/6 h-full"/>
         <div className="text-black flex w-1/6 h-full justify-end items-center font-bold cursor-pointer">
             {
-                user?(<span>
-                        {user.displayName}
+                currentUser?(<span>
+                        {currentUser.displayName}
                     </span> ) :""
             }
         </div>
@@ -69,10 +69,10 @@ const Header = ({user,hidden})=>(
     </>
 );
 
-const mapStateToProps = state =>{
+const mapStateToProps = ({user:{currentUser},cart:{hidden}}) =>{
     return {
-    user : state.user.currentUser,
-    hidden :state.cart.hidden
+    currentUser,
+    hidden 
 }}
 
 export default connect(mapStateToProps)(Header);
