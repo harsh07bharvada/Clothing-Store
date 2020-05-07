@@ -12,7 +12,7 @@ import {createStructuredSelector} from 'reselect'
 
 const Header = ({currentUser,hidden})=>(
     <>
-    <div className="flex inline-block flex-row h-20 w-full text-xs md: text-lg bg-white">
+    <div className="flex inline-block flex-row h-20 w-full text-xs md: text-base bg-white">
         <div className="flex justify-start items-center h-full w-1/6">
             <Link className=" md:mx-20" to='/'>
                 <span className="flex justify-start" >
@@ -23,12 +23,12 @@ const Header = ({currentUser,hidden})=>(
         
         <div className="flex w-1/6 h-full items-center justify-end md:justify-center">
             <Link to='/shop'>
-                SHOP
+                Shop
             </Link>
         </div>
         <div className="flex w-1/6 h-full items-center justify-end md:justify-start">
             <Link to='/'>
-                CONTACT
+                Contact
             </Link>
         </div>
         
@@ -38,12 +38,12 @@ const Header = ({currentUser,hidden})=>(
                 currentUser? 
                 (
                     <div onClick={()=>auth.signOut()}>
-                        SIGN OUT
+                        Sign Out
                     </div>
                 )
                 :(
                 <Link to='/signin'>
-                        SIGN IN
+                        Sign In
                 </Link>)
             }
         </div>
