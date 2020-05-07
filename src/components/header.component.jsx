@@ -12,7 +12,7 @@ import {createStructuredSelector} from 'reselect'
 
 const Header = ({currentUser,hidden})=>(
     <>
-    <div className="flex inline-block flex-row h-20 w-full text-xs md: text-lg">
+    <div className="flex inline-block flex-row h-20 w-full text-xs md: text-lg bg-white">
         <div className="flex justify-start items-center h-full w-1/6">
             <Link className=" md:mx-20" to='/'>
                 <span className="flex justify-start" >
