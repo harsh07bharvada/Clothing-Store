@@ -1,8 +1,9 @@
 import {combineReducers} from 'redux';
 import userReducer from './user/user.reducer';
 import cartReducer from './cart/cart.reducer';
+import DirectoryReducer from '../redux/directory/directory.reducer';
 import {persistReducer} from 'redux-persist';
-import storage from 'redux-persist/lib/storage'
+import storage from 'redux-persist/lib/storage';
 
 // Telling redux that I am using localStorage and not sessionStorage for persisiting the particular reducers.
 // Persist Config is the config object which sets from where we need to start storing so key is root as rootReducer
@@ -17,8 +18,8 @@ const persistConfig = {
 // CombineReducers helps to combine all the small independent reducers to one root reducer
 const rootReducer =  combineReducers({
     user:userReducer,
-    cart:cartReducer
-
+    cart:cartReducer,
+    directory:DirectoryReducer
 });
 
 //Persist reducer passes the config and the reducer 
