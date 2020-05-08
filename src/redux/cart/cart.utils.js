@@ -18,4 +18,31 @@ export const addItemsToCart = (prevCartItems,newItem)=>{
     }
     else
         return [...prevCartItems,{ ...newItem,quantity:1}];
+};
+
+export const removeItem = (prevCartItems,newItem)=>{
+
+    const existingItem = prevCartItems.find(item=> item.id === newItem.id);
+    if(existingItem)
+    {
+        if(existingItem.quantity === 1)
+        {
+            return prevCartItems.filter(item=> item.id !== newItem.id);
+        }
+        else
+        {
+            return prevCartItems.map(item=>{
+                if(item.id === newItem.id)
+                {
+                    return {
+                        ...item,
+                        quantity : item.quantity - 1
+                    }
+                }
+                else
+                    return item;
+            })
+        }
+    }
+
 }
