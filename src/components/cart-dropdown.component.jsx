@@ -6,7 +6,7 @@ import {withRouter} from 'react-router-dom';
 
 const CartDropdown =({cartItems,history})=>(
 
-    <div className="absolute w-64 h-64 right-0 mt-40 mr-10 md:mr-32 bg-white border border-gray-300 rounded-md z-40 shadow-2xl">
+    <div className="absolute w-64 h-64 right-0 mt-40 mr-10  bg-white border border-gray-300 rounded-md z-40 shadow-2xl">
         <div className="flex flex-col w-full h-full justify-end items-center p-3">
             <div className={"flex flex-col h-48 w-full overflow-y-scroll "+ (cartItems.length?" ":" justify-center items-center ")}>
                 {
