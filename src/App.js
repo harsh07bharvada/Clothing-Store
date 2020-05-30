@@ -51,15 +51,15 @@ class App extends React.Component {
 
     const {currentUser} = this.props;
     return (
-      <>
+      <div>
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route exact path='/shop' component={ShopPage} />
+          <Route path='/shop' component={ShopPage} />
           <Route exact path='/signin' render = { () => currentUser ? <Redirect to="/" /> :<SignInSignUp/>  } />
           <Route exact path='/checkout' component={CheckoutPage} />
         </Switch>
-      </>
+      </div>
     );
   };
 }

@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 const CollectionItem = ({item,addItems})=>(
     <div className="flex flex-col w-1/4 h-auto justify-center items-center cursor-pointer">
         <div style={ {  backgroundImage:`url(${item.imageUrl})` } } 
-        className="flex bg-red-200 h-32 md:h-56 w-24 md:w-4/5 mx-2 rounded-sm shadow-md bg-cover bg-top">
+        className="flex bg-gray-500 h-32 md:h-56 w-24 md:w-4/5 mx-2 rounded-sm shadow-md bg-cover bg-top">
         </div>
         <div className="flex flex-col h-20 w-2/3 bg-white text-xs md:text-base -mt-5 text-center shadow-lg rounded-md justify-center items-center">
             <span className="flex w-full h-10 justify-center items-center ">{item.name}</span>

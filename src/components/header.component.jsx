@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {ReactComponent as Logo} from '../assets/crown.svg';
+import {ReactComponent as LogoImg} from '../assets/logo.svg';
 import {auth} from '../firebase/firebase.util';
 import {connect} from 'react-redux';
 import CartIcon from './cart-icon.component';
@@ -12,16 +12,16 @@ import {createStructuredSelector} from 'reselect';
 
 const Header = ({currentUser,hidden})=>(
     <>
-    <div className="flex inline-block flex-row h-20 w-full text-xs md:text-base bg-white uppercase font-semibold text-gray-800 tracking-wide justify-between items-center md:px-12">
+    <div className="flex inline-block flex-row h-20 w-full text-xs md:text-base bg-white uppercase font-semibold text-gray-600 tracking-wide justify-between items-center md:px-12">
         <div className="flex justify-start items-center h-full w-auto md:px-4">
             <Link to='/'>
-              <Logo className="h-8 md:h-12 w-8 md:w-12 "/>
+              <LogoImg className="h-8 md:h-12 w-8 md:w-12 "/>
             </Link>
         </div>
         
         <div className="flex w-auto h-full">
 
-            <div className="flex w-auto h-full items-center justify-center  ">
+            <div className="flex w-auto h-full items-center justify-center ">
                 <Link to='/shop'>
                     Shop
                 </Link>
@@ -33,9 +33,9 @@ const Header = ({currentUser,hidden})=>(
             </div>
             
             
-            <div className=" flex w-auto h-full justify-center items-center  md:px-4 cursor-pointer ">
+            <div className=" flex w-auto h-full justify-center items-center md:px-4 cursor-pointer ">
                 {
-                    currentUser?(<span className="font-bold text-black"> {currentUser.displayName} </span> ) :""
+                    currentUser?(<span className="font-bold text-gray-700"> {currentUser.displayName} </span> ) :""
                 }
             </div>
             
@@ -44,11 +44,11 @@ const Header = ({currentUser,hidden})=>(
                 {hidden ?null :<CartDropwdown/>}
             </div>
             <div className="flex w-auto h-full items-center justify-center md:px-4 cursor-pointer ">
-                    {
-                    currentUser?
-                     ( <div className="bg-gray-800 hover:bg-white border-2 border-gray-900 text-white hover:text-gray-900 rounded px-3 py-2" onClick={()=>auth.signOut()}> Logout </div>)
-                    :( <Link to='/signin'> Sign In </Link>)
-                    }
+                {
+                currentUser?
+                    ( <div className="bg-gray-800 hover:bg-white border-2 border-gray-900 text-white hover:text-gray-900 rounded px-3 py-2" onClick={()=>auth.signOut()}> Logout </div>)
+                :( <Link to='/signin'> Sign In </Link>)
+                }
             </div>
         </div>
         
