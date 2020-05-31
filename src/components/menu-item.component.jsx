@@ -1,9 +1,9 @@
 import React from 'react';
 import '../assets/main.css';
+import {withRouter} from 'react-router-dom'
 
 
-
-const MenuItem = ({title,imageUrl,id}) =>(
+const MenuItem = ({title,imageUrl,id,linkUrl, history, match}) =>(
     <div key={id} className="flex flex-col w-full md:w-1/3 h-auto pt-8 px-3 md:px-8 flex-grow justify-center items-center">
         
         <div className="flex flex-row w-full h-auto bg-white rounded-md justify-center items-center transition-shadow duration-75 ease-in hover:shadow-2xl">
@@ -17,7 +17,7 @@ const MenuItem = ({title,imageUrl,id}) =>(
                 <div className="flex font-bold text-2xl">
                     {title}
                 </div>
-                <div className="flex tracking-widest bg-indigo-700 px-5 py-2 my-4 rounded-md text-xs md:text-sm text-white cursor-pointer transition duration-200 ease-in transform hover:-translate-y-1 hover:scale-105">
+                <div onClick={() => history.push(`${match.url}${linkUrl}`)} className="flex tracking-widest bg-indigo-700 px-5 py-2 my-4 rounded-md text-xs md:text-sm text-white cursor-pointer transition duration-200 ease-in transform hover:-translate-y-1 hover:scale-105">
                     SHOP NOW
                 </div>
             </div>
@@ -28,4 +28,4 @@ const MenuItem = ({title,imageUrl,id}) =>(
     );
 
 
-export default MenuItem;
+export default withRouter(MenuItem);

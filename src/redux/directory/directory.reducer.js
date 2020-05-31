@@ -3,27 +3,32 @@ const INITIAL_STATE = {
         {
             title: 'Sneakers',
             imageUrl : './images/sneakers.jpg',
-            id:3
+            id:3,
+            linkUrl:'shop/sneakers'
         },
         {
             title: 'Jackets',
             imageUrl : './images/jackets.jpg',
-            id:2
+            id:2,
+            linkUrl:'shop/jackets'
         },
         {
             title: 'Hats',
             imageUrl : './images/hats.jpg',
-            id:1
+            id:1,
+            linkUrl:'shop/hats'
         },
         {
             title: 'Mens',
             imageUrl : './images/mens.jpg',
-            id:4
+            id:4,
+            linkUrl:'shop/mens'
         },
         {
             title: 'Womens',
             imageUrl : './images/womens.jpg',
-            id:5
+            id:5,
+            linkUrl:'shop/womens'
         }
 
     ]

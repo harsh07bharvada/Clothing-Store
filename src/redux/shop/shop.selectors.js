@@ -10,5 +10,7 @@ export const selectCollectionFromShop = createSelector(
 export const selectCollection = collectionUrlParam =>
   createSelector(
     [selectCollectionFromShop],
-    collections => collections[collectionUrlParam]
+    collections => {
+      console.log(collections);
+      return collections[collectionUrlParam]}
   );

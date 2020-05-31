@@ -7,7 +7,7 @@ const CollectionOverview = ({collections})=>(
 
     <div className="flex flex-col bg-gray-200 w-full h-full">
         {
-            collections.map(({id,...otherCollections})=>(
+            Object.values(collections).map(({id,...otherCollections})=>(
                 <CollectionPreview key={id} {...otherCollections} />
             ))
         }

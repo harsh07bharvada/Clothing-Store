@@ -6,9 +6,9 @@ import selectSelectionSelector from '../redux/directory/directory.selector';
 const  Directory = ({sections})=>(
 
     <>
-        { sections.map(({title,imageUrl,id})=>{
+        { sections.map(({id,...otherSectionProps })=>{
             return(
-                <MenuItem title={title} imageUrl={imageUrl} key={id} />
+                <MenuItem {...otherSectionProps} key={id} />
             );})
         }
     </>
