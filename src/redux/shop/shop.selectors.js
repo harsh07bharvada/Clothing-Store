@@ -7,6 +7,12 @@ export const selectCollectionFromShop = createSelector(
     shop=> shop.collections
 );
 
+export const selectCollectionsForPreview = createSelector(
+  [selectCollectionFromShop],
+  collections => Object.values(collections)
+);
+
+
 export const selectCollection = collectionUrlParam =>
   createSelector(
     [selectCollectionFromShop],
